@@ -253,3 +253,19 @@ df <- data.frame(color= as.factor(c(sample(seq(3),226, replace=T))))
 
 data <- bind_cols(matrix,df)
 
+ggplot(data, aes(x=V1, y=V2, size = V3, color = color)) +
+  scale_x_continuous(limits = c(0, 60)) +
+  scale_y_continuous(limit = c(2.5, 18)) +
+  geom_point(alpha=0.7) +
+  scale_size(range = c(3, 7), name="a") +
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal() + 
+  theme(legend.position = "none",
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        plot.title = element_text(family = "Times",
+                                  colour = "#A4A7C8",
+                                  size = 40, face = "bold")) +
+  labs(title="Dr.")
