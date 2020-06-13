@@ -248,3 +248,8 @@ matrix <- matrix(c(
   
 ), ncol = 3, byrow = TRUE)
 matrix <- as.data.frame(matrix)
+
+df <- data.frame(color= as.factor(c(sample(seq(3),226, replace=T))))
+
+data <- bind_cols(matrix,df)
+
