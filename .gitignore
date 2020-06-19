@@ -1,4 +1,8 @@
+# default
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# mas os
+.DS_Store
