@@ -2,8 +2,9 @@
 
 library(tidyverse)
 library(ggplot2)
-library(viridis)
-library(hrbrthemes)
+# library(viridis)
+library(viridisLite)
+# library(hrbrthemes)
 
 matrix <- matrix(c(
   4.9-1, 11, .1,
@@ -258,17 +259,20 @@ ggplot(data, aes(x=V1, y=V2, size = V3, color = color)) +
   scale_y_continuous(limit = c(2.5, 18)) +
   geom_point(alpha=0.7) +
   scale_size(range = c(3, 7), name="a") +
-  scale_color_brewer(palette = "Set2") +
-  theme_set(theme_gray(base_size = 11))+
+  scale_colour_viridis_d()+
+  # viridis(n = 4, option = "D")+
+  # scale_color_brewer(palette = "Set2") +
+  theme_minimal(base_size = 11)+
   theme(legend.position = "none",
         axis.text.x=element_blank(),
         axis.text.y=element_blank(),
         axis.title.x=element_blank(),
         axis.title.y=element_blank(),
-        plot.title = element_text(family = "Times",
-                                  colour = "#A4A7C8",
-                                  size = 40, face = "bold")) +
-  labs(title="Dr.")
+        # plot.title = element_text(family = "Times",
+        #                           colour = "midnightblue",
+        #                           size = 40, face = "bold")
+        )# +
+  # labs(title="Dr.")
 
 
 
